@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/fluencelabs/as-init/issues"
   },
+  "bin": {
+    "as-init": "bin/as-init"
+  },
   "homepage": "https://github.com/fluencelabs/as-init#readme"
 }
