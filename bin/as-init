@@ -1,0 +1,6 @@
+#!/bin/bash
+
+npm init -y -q
+npm install --save-dev AssemblyScript/assemblyscript
+npx asinit .
+rm index.js
