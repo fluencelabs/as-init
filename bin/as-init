@@ -3,6 +3,7 @@
 npm init -y -q
 npm install --save-dev AssemblyScript/assemblyscript
 npm install --save-dev fluencelabs/assemblyscript-sdk
+npm install --save-dev fluencelabs/
 npx asinit .
 rm index.js
 rm assembly/index.ts
@@ -12,7 +13,7 @@ import "allocator/arena";
 
 import {handler} from "./main";
 import {loggedStringHandler} from "../node_modules/assemblyscript-sdk/assembly/index";
-import {log} from "./logger";
+import {log} from "../node_modules/assemblyscript-sdk/assembly/logger";
 
 // VM wrapper will put requests to memory through this function
 export function allocate(size: usize) :i32 {
