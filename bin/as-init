@@ -3,7 +3,7 @@
 npm init -y -q
 npm install --save-dev AssemblyScript/assemblyscript
 npm install --save-dev fluencelabs/assemblyscript-sdk
-npm install --save-dev fluencelabs/
+
 npx asinit .
 rm index.js
 rm assembly/index.ts
