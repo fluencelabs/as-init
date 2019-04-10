@@ -8,7 +8,7 @@ npx asinit .
 rm index.js
 rm assembly/index.ts
 
-echo | node <<EOL
+node <<EOL
 const fs = require('fs');
 
 let rawdata = fs.readFileSync('package.json');
