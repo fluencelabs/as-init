@@ -55,6 +55,6 @@ EOL
 cat >assembly/main.ts <<EOL
 // main handler for an application
 export function handler(request: string): string {
-  return "Hello, " + request + "!";
+  return "";
 }
 EOL
