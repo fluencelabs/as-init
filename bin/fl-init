@@ -21,7 +21,7 @@ let scripts = {
 
 packageJson.scripts = scripts;
 
-let data = JSON.stringify(packageJson, null, 4);
+let data = JSON.stringify(packageJson, null, 2);
 fs.writeFileSync('package.json', data);
 EOL
 
