@@ -8,6 +8,23 @@ npx asinit .
 rm index.js
 rm assembly/index.ts
 
+echo | node <<EOL
+const fs = require('fs');
+
+let rawdata = fs.readFileSync('package.json');
+let packageJson = JSON.parse(rawdata);
+delete packageJson.scripts;
+
+let scripts = {
+    flbuild: "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate --optimize --use abort=''"
+};
+
+packageJson.scripts = scripts;
+
+let data = JSON.stringify(packageJson, null, 4);
+fs.writeFileSync('package.json', data);
+EOL
+
 cat >assembly/index.ts <<EOL
 // you can use other allocators like 'buddy' or 'tlsf', but only this can be fully reset
 import "allocator/arena";
