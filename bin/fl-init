@@ -25,7 +25,7 @@ fs.writeFileSync('package.json', data);
 EOL
 
 cat >assembly/index.ts <<EOL
-// you can use other allocators like 'buddy' or 'tlsf', but only this can be fully reset
+// you can use other allocators like 'buddy' or 'arena'
 import "allocator/arena";
 
 import {handler} from "./main";
@@ -40,7 +40,7 @@ export function allocate(size: usize) :i32 {
 // VM wrapper will deallocate response from memory after handling it
 export function deallocate(ptr: i32, size: usize): void {
   memory.free(ptr);
-  // use 'memory.reset()' for reset memory after every request
+  // use 'memory.reset()' for reset memory after every request, only for 'arena' allocator
 }
 
 // VM wrapper calls this function with a pointer on request in memory.
