@@ -15,7 +15,7 @@ let rawdata = fs.readFileSync('package.json');
 let packageJson = JSON.parse(rawdata);
 
 let scripts = {
-    flbuild: "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate --optimize --use abort=''"
+    flbuild: "asc assembly/index.ts -b build/optimized.wasm --validate --optimize --use abort=''"
 };
 
 packageJson.scripts = scripts;
